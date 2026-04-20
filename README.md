@@ -128,6 +128,7 @@ Both projects use:
 - **Build Tool:** Vite
 - **Package Manager:** npm
 - **Linting:** ESLint
+- **Backend:** json-server for mock API
 
 ### Install Dependencies (Both Projects)
 
@@ -135,14 +136,63 @@ Both projects use:
 npm install
 ```
 
-### Run Development Server
+### Run Development Server & Backend
+
+Both the development server and JSON server need to be running simultaneously. Open two terminal windows:
+
+**Terminal 1 - React Development Server:**
 
 ```bash
 npm run dev
 ```
+
+**Terminal 2 - JSON Server (Backend):**
+
+```bash
+npm run server
+```
+
+The JSON server runs on `http://localhost:8000` and serves:
+
+- **React Quiz:** `data/questions.json` (quiz questions)
+- **WorldWise:** `data/cities.json` (visited cities data)
 
 ### Build for Production
 
 ```bash
 npm run build
 ```
+
+---
+
+## 💾 Backend / JSON Server
+
+Both projects use **json-server** to provide a mock REST API for data persistence.
+
+### React Quiz Backend
+
+- **Data File:** `data/questions.json`
+- **API Endpoint:** `http://localhost:8000/questions`
+- **Data:** Quiz questions with options and correct answers
+- **Methods:** GET (retrieve questions)
+
+### WorldWise Backend
+
+- **Data File:** `data/cities.json`
+- **API Endpoints:**
+  - `http://localhost:8000/cities` - List all visited cities
+  - `http://localhost:8000/cities/:id` - Get specific city
+- **Data:** Visited cities with geolocation data
+- **Methods:** GET (retrieve), POST (add city), DELETE (remove city)
+
+### JSON Server Commands
+
+To start the JSON server for either project:
+
+```bash
+npm run server
+```
+
+The server includes automatic route generation, making it easy to perform CRUD operations on the JSON data files without writing backend code.
+
+---
