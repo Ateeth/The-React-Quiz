@@ -1,6 +1,8 @@
+import { useQuiz } from "../contexts/QuizContext";
 import Options from "./Options";
 
-function Question({ currentQuestion, dispatch, answer }) {
+function Question() {
+  const { currentQuestion, dispatch, answer } = useQuiz();
   const question = currentQuestion.question;
   const options = currentQuestion.options;
   const correctOption = currentQuestion.correctOption;

@@ -20,17 +20,30 @@ A dynamic quiz application that tests users with timed questions and tracks thei
 **Tech Stack:**
 
 - React with Vite
+- React Context API + `useReducer` for global state management (no prop drilling)
 - CSS styling
 - JSON data structure for questions
+
+**State Management:**
+
+All quiz state is managed centrally in `QuizContext` using `useReducer`, avoiding prop drilling across components. Any component can access state via the `useQuiz()` custom hook.
+
+Managed state includes: `questions`, `status`, `index`, `answer`, `points`, `highScore`, `secondsRemaining`
+
+Actions: `dataReceived`, `dataFailed`, `start`, `newAnswer`, `nextQuestion`, `finish`, `restart`, `tick`
 
 **Key Components:**
 
 - `Question.jsx` - Displays current question
 - `Options.jsx` - Renders answer options
-- `Timer.jsx` - Countdown timer for questions
+- `Timer.jsx` - Countdown timer (30s per question)
 - `Progress.jsx` - Shows quiz progress
-- `FinishScreen.jsx` - Displays results
+- `FinishScreen.jsx` - Displays final score and high score
 - `StartScreen.jsx` - Initial quiz screen
+
+**Context:**
+
+- `contexts/QuizContext.jsx` - Global quiz state via `useReducer` + `useQuiz()` hook
 
 **Getting Started:**
 
@@ -103,6 +116,7 @@ npm run dev
 ├── react-quiz/          # Quiz application
 │   ├── src/
 │   │   ├── components/  # Quiz UI components
+│   │   ├── contexts/    # QuizContext (useReducer + Context API)
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   └── data/

@@ -1,4 +1,7 @@
-function StartScreen({ numQuestions, dispatch }) {
+import { useQuiz } from "../contexts/QuizContext";
+
+function StartScreen() {
+  const { numQuestions, dispatch } = useQuiz();
   function handleClick() {
     dispatch({ type: "start" });
   }
