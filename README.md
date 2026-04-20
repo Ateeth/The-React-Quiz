@@ -1,6 +1,6 @@
 # React Projects Collection
 
-This repository contains two React applications built during the React Udemy course:
+This repository contains two React applications:
 
 ## 📚 Applications Overview
 
