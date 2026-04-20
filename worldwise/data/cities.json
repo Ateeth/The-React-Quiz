@@ -1,0 +1,29 @@
+{
+  "cities": [
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "17806751"
+    },
+    {
+      "cityName": "Dharwad",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2026-04-20T14:30:59.293Z",
+      "notes": "Good",
+      "position": {
+        "lat": "15.44309082346371",
+        "lng": "75.01190185546876"
+      },
+      "id": "bZDrOPX4pcM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
